@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXT GEN — Department Logo Variations</title>
+  <style>
+    :root {
+      --bg-primary: #0A1628;
+      --bg-secondary: #0d1d33;
+      --bg-card: #111d30;
+      --accent-blue: #2979FF;
+      --accent-green: #4CD964;
+      --text-primary: #ffffff;
+      --text-secondary: #94a3b8;
+      --border: #1e3a5f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, #0d1a2d 100%);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+    .ref-code {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent-blue);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(41, 121, 255, 0.3);
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .style-section {
+      margin-bottom: 4rem;
+    }
+    .style-header {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+    .style-header h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .style-badge {
+      background: var(--accent-blue);
+      color: #fff;
+      font-size: 0.65rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .style-header p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .department-grid {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    @media (min-width: 768px) {
+      .department-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1200px) {
+      .department-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .dept-section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent-green);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .variation-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .variation-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    .variation-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .variation-label {
+      padding: 0.75rem 1rem;
+      background: var(--bg-secondary);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .variation-label .scheme {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .legend {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+    .legend h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+    .legend-grid {
+      display: grid;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+    @media (min-width: 768px) {
+      .legend-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .color-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .dot-chrome { background: linear-gradient(135deg, #c0c0c0, #808080); }
+    .dot-green { background: var(--accent-green); }
+    .dot-blue { background: var(--accent-blue); }
+    .dot-navy { background: var(--bg-primary); border: 1px solid var(--border); }
+    .dot-white { background: #f8f8f8; border: 1px solid var(--border); }
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="ref-code">Ref: NG-V3-AI-48</div>
+  
+  <header>
+    <h1>NEXT GEN Logo Variations</h1>
+    <p>Department Brand Lockups — 48 AI-Generated Variations</p>
+  </header>
+
+  <div class="container">
+    <div class="legend">
+      <h3>Color Scheme Legend</h3>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="color-dot dot-chrome"></span> Chrome — Metallic silver finish</div>
+        <div class="legend-item"><span class="color-dot dot-green"></span> Kermit Green — Brand accent #4CD964</div>
+        <div class="legend-item"><span class="color-dot dot-blue"></span> Blue — Divider slash #2979FF</div>
+        <div class="legend-item"><span class="color-dot dot-navy"></span> Navy — Dark background #0A1A2E</div>
+        <div class="legend-item"><span class="color-dot dot-white"></span> White — Flat style background</div>
+      </div>
+    </div>
+
+    <!-- STYLE 01 -->
+    <section class="style-section">
+      <div class="style-header">
+        <h2><span class="style-badge">Style 1</span> Premium 3D Chrome Beveled</h2>
+        <p>Heavily beveled text, brushed metal gradient. Bold, premium aesthetic for high-impact applications.</p>
+      </div>
+      <div class="department-grid">
+        <div class="dept-section">
+          <h3>Construction</h3>
+          <div class="variation-card"><img src="variations/01-construction-chrome.png" alt="01 Construction Chrome"><div class="variation-label"><span>Chrome</span><span class="scheme">All metallic</span></div></div>
+          <div class="variation-card"><img src="variations/01-construction-green-dept.png" alt="01 Construction Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/01-construction-green-nextgen.png" alt="01 Construction Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/01-construction-full-green.png" alt="01 Construction Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+        <div class="dept-section">
+          <h3>Homes</h3>
+          <div class="variation-card"><img src="variations/01-homes-chrome.png" alt="01 Homes Chrome"><div class="variation-label"><span>Chrome</span><span class="scheme">All metallic</span></div></div>
+          <div class="variation-card"><img src="variations/01-homes-green-dept.png" alt="01 Homes Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/01-homes-green-nextgen.png" alt="01 Homes Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/01-homes-full-green.png" alt="01 Homes Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+        <div class="dept-section">
+          <h3>Developments</h3>
+          <div class="variation-card"><img src="variations/01-developments-chrome.png" alt="01 Developments Chrome"><div class="variation-label"><span>Chrome</span><span class="scheme">All metallic</span></div></div>
+          <div class="variation-card"><img src="variations/01-developments-green-dept.png" alt="01 Developments Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/01-developments-green-nextgen.png" alt="01 Developments Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/01-developments-full-green.png" alt="01 Developments Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STYLE 02 -->
+    <section class="style-section">
+      <div class="style-header">
+        <h2><span class="style-badge">Style 2</span> Clean Polished Chrome</h2>
+        <p>Smooth metal text, subtle bevel, modern aesthetic. Professional and refined for corporate use.</p>
+      </div>
+      <div class="department-grid">
+        <div class="dept-section">
+          <h3>Construction</h3>
+          <div class="variation-card"><img src="variations/02-construction-chrome.png" alt="02 Construction Chrome"><div class="variation-label"><span>Chrome</span><span class="scheme">All metallic</span></div></div>
+          <div class="variation-card"><img src="variations/02-construction-green-dept.png" alt="02 Construction Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/02-construction-green-nextgen.png" alt="02 Construction Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/02-construction-full-green.png" alt="02 Construction Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+        <div class="dept-section">
+          <h3>Homes</h3>
+          <div class="variation-card"><img src="variations/02-homes-chrome.png" alt="02 Homes Chrome"><div class="variation-label"><span>Chrome</span><span class="scheme">All metallic</span></div></div>
+          <div class="variation-card"><img src="variations/02-homes-green-dept.png" alt="02 Homes Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/02-homes-green-nextgen.png" alt="02 Homes Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/02-homes-full-green.png" alt="02 Homes Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+        <div class="dept-section">
+          <h3>Developments</h3>
+          <div class="variation-card"><img src="variations/02-developments-chrome.png" alt="02 Developments Chrome"><div class="variation-label"><span>Chrome</span><span class="scheme">All metallic</span></div></div>
+          <div class="variation-card"><img src="variations/02-developments-green-dept.png" alt="02 Developments Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/02-developments-green-nextgen.png" alt="02 Developments Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/02-developments-full-green.png" alt="02 Developments Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STYLE 03 -->
+    <section class="style-section">
+      <div class="style-header">
+        <h2><span class="style-badge">Style 3</span> Flat Minimalist</h2>
+        <p>No 3D effects, no gradients. Clean print-ready designs with solid colors for signage and stationery.</p>
+      </div>
+      <div class="department-grid">
+        <div class="dept-section">
+          <h3>Construction</h3>
+          <div class="variation-card"><img src="variations/03-construction-chrome.png" alt="03 Construction Navy"><div class="variation-label"><span>Navy</span><span class="scheme">All navy text</span></div></div>
+          <div class="variation-card"><img src="variations/03-construction-green-dept.png" alt="03 Construction Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/03-construction-green-nextgen.png" alt="03 Construction Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/03-construction-full-green.png" alt="03 Construction Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+        <div class="dept-section">
+          <h3>Homes</h3>
+          <div class="variation-card"><img src="variations/03-homes-chrome.png" alt="03 Homes Navy"><div class="variation-label"><span>Navy</span><span class="scheme">All navy text</span></div></div>
+          <div class="variation-card"><img src="variations/03-homes-green-dept.png" alt="03 Homes Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/03-homes-green-nextgen.png" alt="03 Homes Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/03-homes-full-green.png" alt="03 Homes Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+        <div class="dept-section">
+          <h3>Developments</h3>
+          <div class="variation-card"><img src="variations/03-developments-chrome.png" alt="03 Developments Navy"><div class="variation-label"><span>Navy</span><span class="scheme">All navy text</span></div></div>
+          <div class="variation-card"><img src="variations/03-developments-green-dept.png" alt="03 Developments Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/03-developments-green-nextgen.png" alt="03 Developments Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/03-developments-full-green.png" alt="03 Developments Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STYLE 04 -->
+    <section class="style-section">
+      <div class="style-header">
+        <h2><span class="style-badge">Style 4</span> Bold 3D Connected</h2>
+        <p>Deep chiseled sculptural effect with connected slash overlapping text. Dynamic, modern, attention-grabbing.</p>
+      </div>
+      <div class="department-grid">
+        <div class="dept-section">
+          <h3>Construction</h3>
+          <div class="variation-card"><img src="variations/04-construction-chrome.png" alt="04 Construction Chrome"><div class="variation-label"><span>Chrome</span><span class="scheme">All metallic</span></div></div>
+          <div class="variation-card"><img src="variations/04-construction-green-dept.png" alt="04 Construction Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/04-construction-green-nextgen.png" alt="04 Construction Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/04-construction-full-green.png" alt="04 Construction Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+        <div class="dept-section">
+          <h3>Homes</h3>
+          <div class="variation-card"><img src="variations/04-homes-chrome.png" alt="04 Homes Chrome"><div class="variation-label"><span>Chrome</span><span class="scheme">All metallic</span></div></div>
+          <div class="variation-card"><img src="variations/04-homes-green-dept.png" alt="04 Homes Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/04-homes-green-nextgen.png" alt="04 Homes Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/04-homes-full-green.png" alt="04 Homes Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+        <div class="dept-section">
+          <h3>Developments</h3>
+          <div class="variation-card"><img src="variations/04-developments-chrome.png" alt="04 Developments Chrome"><div class="variation-label"><span>Chrome</span><span class="scheme">All metallic</span></div></div>
+          <div class="variation-card"><img src="variations/04-developments-green-dept.png" alt="04 Developments Green Dept"><div class="variation-label"><span>Green Dept</span><span class="scheme">Green dept text</span></div></div>
+          <div class="variation-card"><img src="variations/04-developments-green-nextgen.png" alt="04 Developments Green NEXT GEN"><div class="variation-label"><span>Green NEXT GEN</span><span class="scheme">Green NEXT GEN</span></div></div>
+          <div class="variation-card"><img src="variations/04-developments-full-green.png" alt="04 Developments Full Green"><div class="variation-label"><span>Full Green</span><span class="scheme">All green</span></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>NEXT GEN Brand Identity — Generated 2026-03-04</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">48 AI-generated variations • 4 Styles • 3 Departments • 4 Color Schemes</p>
+  </footer>
+</body>
+</html>
